@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>[README] Testing Iteration 9</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script src="js/main.js"></script>
+	<style type="text/css">
+
+    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>    
+  </head>
+  <body>
+			<script>var currentIndex = 9;</script>
+	  <div class="content">
+		  <div class="title">
+			  <h1>Testing Iteration 5</h1>
+			  <h2>Mulitple computers</h2>
+			  <div class="navigation">
+				  <h2 id="navigationHeader">Navigation</h2>
+				  <a id="prevLink">Previous Content</a> | <a href="../README.html">Table of Contents</a> | <a id="nextLink">Next Content</a></div>
+		  </div>
+		  	<ul>
+				<blockquote>It will be assumed that the project has been imported in Eclipse and setupTestFiles.java has been run at least once. If you have not done so, click <a href="eclipseSetup.html">this link</a> to learn how. Also, please check out changelog.html.</blockquote>
+				<blockquote>Assuming you will be testing on two machines, the first machine (on which you will run the Client) will be referred to as Machine A and the seccond machine (on which you will run the errorSim and Server or simply Server) will be reffered to as Machine B</blockquote>
+				<strong>Testing With Error Simulator on</strong>
+				<ol>
+					<li>Run setupTestFiles.java on Machine 2.</li>
+					<li>Run Server.java on Machine 2 as per before.</li>
+					<li>Choose a directory for the server files or simply press enter to use the default (preferred)</li>
+					<li>Run errorSim.java on Machine 2 as per before.</li>
+					<blockquote>You may introduce any errors if you wish in the errorSim. The method of doing so has not changed from iteration 4. Simply refer to <a href="testingIT4.html">Iteration 4 page</a> if the menu you are greeted with is confusing.</blockquote>
+					<li>On Machine 2, visit <a href="www.ipchicken.com">www.ipchicken.com</a> and take note of the IP address or the Name Address. Like Shown below.</li>
+					<div class = "screenie">Screenshot of ipchicken<center><a href="img/it5/ipchicken.png"><img src = "img/it5/ipchicken.png" height = 50% width = 50%><br>Click To Enlarge</a></div>				
+					<li>Run setupTestFiles.java on Machine 1.</li>
+					<li>Run Client.java on Machine 1.</li>
+					<li>Choose a directory for the client files or simply press enter to use the default (preferred)</li>
+					<blockquote>
+						You will notice the Client Menu has changed to show the IP/Name Address and Port on which we will send requests to.
+						<div class = "screenie">Screenshot of the "connection status"<center><a href="img/it5/targetAddrPort.PNG"><img src = "img/it5/targetAddrPort.PNG" height = 50% width = 50%><br>Click To Enlarge</a></div>			
+					</blockquote>
+					<li>Since we are testing with Error Sim on, in the Client console (on Machine 1) type "normal off" to turn off normal mode. Once you press enter the menu will reprint</li>
+					<div class = "screenie">Client menu: Turning off Normal mode<center><a href="img/it5/normalOff.PNG"><img src = "img/it5/normalOff.PNG" height = 50% width = 50%><br>Click To Enlarge</a></div>			
+					<li>Type "connect" and press enter. You will be greeted with a submenu.</li>
+					<li>In the submenu, type either the name address or the IP address of Machine 2 (we prefer name address) that you have taken note of. </li>
+					<div class = "screenie">Client menu: Changing connection address<center><a href="img/it5/connect.PNG"><img src = "img/it5/connect.PNG" height = 50% width = 50%><br>Click To Enlarge</a></div>			
+					<li>You may test Read/Write requests in combination of any possible errors now. You should also try the various special test files we have provided, list of which can be found <a href="fileStructure.html">here</a></li>
+				</ol>
+				<strong>Testing With Error Simulator on</strong>
+				<ol>
+					<li>Run setupTestFiles.java on Machine 2.</li>
+					<li>Run Server.java on Machine 2 as per before.</li>
+					<li>Choose a directory for the server files or simply press enter to use the default (preferred)</li>
+					<li>On Machine 2, visit <a href="www.ipchicken.com">www.ipchicken.com</a> and take note of the IP address or the Name Address. Like Shown below.</li>
+					<div class = "screenie">Screenshot of ipchicken<center><a href="img/it5/ipchicken.png"><img src = "img/it5/ipchicken.png" height = 50% width = 50%><br>Click To Enlarge</a></div>				
+					<li>Run setupTestFiles.java on Machine 1.</li>
+					<li>Run Client.java on Machine 1.</li>
+					<li>Choose a directory for the client files or simply press enter to use the default (preferred)</li>
+					<blockquote>
+						You will notice the Client Menu has changed to show the IP/Name Address and Port on which we will send requests to.
+						<div class = "screenie">Screenshot of the "connection status"<center><a href="img/it5/targetAddrPort.PNG"><img src = "img/it5/targetAddrPort.PNG" height = 50% width = 50%><br>Click To Enlarge</a></div>			
+					</blockquote>
+					<li>Since we are testing with Error Sim Off, in the Client console (on Machine 1) type "normal on" to turn on normal mode. Once you press enter the menu will reprint</li>
+					<div class = "screenie">Client menu: Turning On Normal mode<center><a href="img/it5/normalOn.PNG"><img src = "img/it5/normalOn.PNG" height = 50% width = 50%><br>Click To Enlarge</a></div>			
+					<li>Type "connect" and press enter. You will be greeted with a submenu.</li>
+					<li>In the submenu, type either the name address or the IP address of Machine 2 (we prefer name address) that you have taken note of. </li>
+					<div class = "screenie">Client menu: Changing connection address<center><a href="img/it5/normalConnect.PNG"><img src = "img/it5/normalConnect.PNG" height = 50% width = 50%><br>Click To Enlarge</a></div>			
+					<li>You may test Read/Write requests. Since error simulator is out of the picture, you should also try the various special test files we have provided, list of which can be found <a href="fileStructure.html">here</a></li>
+				</ol>
+	  		</ul>
+			<blockquote>Similarily, you may also have multiple clients connected to the same server. The procedure will be same in either of the cases described above.</blockquote>
+	 </div>
+	<script>
+		document.getElementById("prevLink").href=solveURLs(contentsArray,currentIndex,true);
+		document.getElementById("nextLink").href=solveURLs(contentsArray,currentIndex,false);
+	</script>
+</body>
+</html>

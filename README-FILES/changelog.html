@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>[README] Changelog</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script src="js/main.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>    
+  </head>
+  <body>
+	  <script>var currentIndex = 1;</script>
+	  <div class="content">
+		  <div class="title">
+			  <h1>Change Log</h1>
+			  <div class="navigation">
+				  <h2 id="navigationHeader">Navigation</h2>
+				  <a id="prevLink">Previous Content</a> | <a href="../README.html">Table of Contents</a> | <a id="nextLink">Next Content</a></div>
+		  </div>
+		  <ol>
+			  <li>Client's menu has changed, we added "connect" menu which allows users to connect to localhost or another machine</li>
+			  <li>Client's menu has changed, we added "normal on" (send WRQ, RRQ to port 69) and "normal off" (send WRQ, RRQ to port 68)</li>
+			  <div class = "screenie"><center><a href="img/newClientMenu.PNG"><img src = "img/newClientMenu.PNG" height = 50% width = 50%><br>Click To Enlarge</a></div>
+			  <li>We now permit Normal mode of operation without Error Simulator. We do so by sending requests directly to port 69.</li>
+			  <li>We allow files to be read from the server even if they are read only</li>
+			  <li></li>
+		  </ol>
+	 </div>
+	<script>
+		document.getElementById("prevLink").href=solveURLs(contentsArray,currentIndex,true);
+		document.getElementById("nextLink").href=solveURLs(contentsArray,currentIndex,false);
+	</script>
+</body>
+</html>
