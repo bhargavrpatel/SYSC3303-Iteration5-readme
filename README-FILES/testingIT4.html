@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>[README] Testing Iteration 4</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script src="js/main.js"></script>
+	<style type="text/css">
+
+    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>    
+  </head>
+  <body>
+	  <script>var currentIndex = 7;</script>
+	  <div class="content">
+		  <div class="title">
+			  <h1>Testing Iteration 4</h1>
+			  <div class="navigation">
+				  <h2 id="navigationHeader">Navigation</h2>
+				  <a id="prevLink">Previous Content</a> | <a href="../README.html">Table of Contents</a> | <a id="nextLink">Next Content</a></div>
+		  </div>
+		  <ol>
+			<blockquote>From this document page onwards, it will be assumed that the project has been imported in eclipse and setupTestFiles.java has been run at least once. If you have not done so, click <a href="eclipseSetup.html">this link</a> to do so.</a></blockquote>
+		    <blockquote>It was a MUST that you have followed the Normal Operation procedure because the steps of running the files in a sequence have been omited. This also allows you to have a control to test against. Simply click "Previous Content" link from the above menu</blockquote>
+		    <li>Run Server.java file. Press enter to use the default (server-files) folder</li>
+		    <li>Run errorSim.java file. From here, you have a variety to options to choose from. </li>
+		  	<ul> 
+				<li>Normal <em class="listComment">Normal Mode of operation</em></li>
+				<li>0 <em class="listComment">Change packet's Opcode </em></li>
+				<li>2 <em class="listComment">Remove Zero after mode in request packet </em></li>
+				<li>3 <em class="listComment">Change the mode to an invalid mode </em></li>
+				<li>4 <em class="listComment">Add stuff to packet </em></li>
+				<li>5 <em class="listComment">Remove stuff from packet </em></li>
+				<li>6 <em class="listComment">Remove filname from request packet </em></li>
+				<li>7 <em class="listComment">Enter an invalid TID </em></li>
+				<li>8 <em class="listComment">Lose a packet </em></li>
+				<li>9 <em class="listComment">Delay a packet </em></li>
+				<li>10 <em class="listComment">Duplicate a packet </em></li>
+				<li>15 <em class="listComment">Change Block Number </em></li>
+				<li>exit <em class="listComment">exit the error simulator (when current transfers finish) </em></li>
+		    </ul>
+		  	<li>Follow the steps for any of the option you chose, depending on what <strong>Menu Category</strong> they belong to.</li>
+				<ol class = "optionsCategory">
+					<li class = "optionsCategory">The following steps are applicable to Option(s): 4, 5, 7, 8, 9, and 10. We have categorized the options into four categories, depending on the menu they show after selection.</li>
+					<ol type = "a">
+						<li>When prompted, enter any of the applicable options (4/5/7/8/9/10)</li>
+						<li>You will be prompted to select either Data, ACK, or in some cases Request packet on which you want to apply the error on. Select the packet by entering their respective menu option shown in the brackets. <strong>Note: In some cases you will be asked to enter a number such as 13 or 14, but in some cases you will be asked to enter "data", "ack" or "request".</strong></li>
+						<li>Once you have selected the packet type, you will be asked to enter the specific block number which you will make erroneous. Simply enter an integer (we recommend 2 or 3 as some test files are small).</li>
+						<div class = "screenie">Screenshot summary of the steps<center><a href="img/it4/errorSim-EnteringMode.png"><img src = "img/it4/errorSim-EnteringMode.png" height = 50% width = 50%><br>Click To Enlarge</a></div>				
+						<li>After success, the menu will reprint. Simply skip to the Client step (Step 4 now)</li>
+					</ol>
+					<li class = "optionsCategory">The following steps are applicable to Options(s): 1, 2, and 3</li>
+					<ol type = "a">
+						<li>When prompted, enter any of the applicable options (1/2/3)</li>
+						<mli>You will be prompted to select either Data, ACK, Request packet on which you want to apply the error on. Choose any of the available options (data, ack, request).</strong></li>
+						<div class = "screenie">Screenshot summary of the steps<center><a href="img/it4/change-opt123.PNG"><img src = "img/it4/change-opt123.PNG" height = 50% width = 50%><br>Click To Enlarge</a></div>				
+						<li>After success, the menu will reprint. Simply skip to the Client step (Step 4 now)</li>
+					</ol>
+					<li class = "optionsCategory">The following steps are applicable to Options(s): 0</li>
+					<ol type = "a">
+						<li>When prompted, enter 0</li>
+						<li>As soon as you type a number, the appropriate erroneous change will occur and the menu will reprint.</li>
+						<div class = "screenie">Screenshot summary of the steps<center><a href="img/it4/change-opcode.PNG"><img src = "img/it4/change-opcode.PNG" height = 50% width = 50%><br>Click To Enlarge</a></div>				
+						<li>After success, the menu will reprint. Simply skip to the Client step (Step 4 now)</li>
+					</ol>
+					<li class = "optionsCategory">The following steps are applicable to Options(s): 15</li>
+					<ol type = "a">
+						<li>When prompted, enter 15</li>
+						<li>You will be prompted to select either Data, or ACK packet on which you want to apply the error on. Choose any of the available options ('data' or 'ack').</li>
+						<li>Once you have selected the packet type, you will be asked to specify which block number you would like to change. Simply enter an integer (we recommend 2 or 3 as some test files are small).</li>
+						<li>Once you have selected the packet type, you will be asked to specify the new block number. Simply enter an integer (we recommend 2 or 3 as some test files are small).</li>
+						<div class = "screenie">Screenshot summary of the steps<center><a href="img/it4/error15.PNG"><img src = "img/it4/error15.PNG" height = 50% width = 50%><br>Click To Enlarge</a></div>				
+						<li>After success, the menu will reprint. Simply skip to the Client step (Step 4 now)</li>
+					</ol>
+				</ol>
+
+		  <li>Run Client.java file as per normal</li>	  
+		  <li>Enter either "read loremServer.txt" or "write loremClient.txt" <STRONG>ENSURE that the File you chose does not exist on target side.</STRONG> Below we have shown what happened in the case of Example 1. We have chosen 'read loremserver.txt' in the scenario shown below</li>
+		  <div class = "screenie">Client Console output<center><a href="img/it4/errorSim-ClientView-After.PNG"><img src = "img/it4/errorSim-ClientView-After.PNG" height = 50% width = 50%><br>Click To Enlarge</a></div>
+		  <div class = "screenie">Error Sim Console output<center><a href="img/it4/errorSim-HostView-After.PNG"><img src = "img/it4/errorSim-HostView-After.PNG" height = 50% width = 50%><br>Click To Enlarge</a></div>
+		  <div class = "screenie">Server Console output<center><a href="img/it4/errorSim-ServerView-After.PNG"><img src = "img/it4/errorSim-ServerView-After.PNG" height = 50% width = 50%><br>Click To Enlarge</a></div>
+		</ol>
+		<blockquote>Similarily, you may check all other modes to ensure that our submission is fully functional. We can save you the trouble and let you know that it already is &#9786;. We have not shown every possible combination, because there are SO many! The mode, the packet, the block number, and the read/write operation. We also wanted to limit the amount of images we are adding in the submission. We however are going to present most cases in our presentation.</blockquote>
+	 </div>
+	<script>
+		document.getElementById("prevLink").href=solveURLs(contentsArray,currentIndex,true);
+		document.getElementById("nextLink").href=solveURLs(contentsArray,currentIndex,false);
+	</script>
+</body>
+</html>

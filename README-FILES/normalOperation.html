@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>[README] Testing Normal operation</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script src="js/main.js"></script>
+	<style type="text/css">
+
+    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>    
+  </head>
+  <body>
+	  <script>var currentIndex = 4;</script>
+	  <div class="content">
+		  <div class="title">
+			  <h1>Testing Normal operation</h1>
+			  <div class="navigation">
+				  <h2 id="navigationHeader">Navigation</h2>
+				  <a id="prevLink">Previous Content</a> | <a href="../README.html">Table of Contents</a> | <a id="nextLink">Next Content</a></div>
+		  </div>
+		  <ol>
+			<blockquote>From this document page onwards, it will be assumed that the project has been imported in eclipse and setupTestFiles.java has been run at least once. If you have not done so, click <a href="eclipseSetup.html">this link</a> to do so.</a></blockquote>
+			<li>From the Package Explorer, run Server.java file. In the console, just press enter to use the default folder "server-files" in Files folder. You may chose another, but you will have to add files yourself.</li>
+		  	<div class = "screenie">Before<center><a href="img/it1/server.png"><img src = "img/it1/server.png" height = 50% width = 50%><br>Click To Enlarge</a></div>
+			<div class = "screenie">After<center><a href="img/it1/server-after.png"><img src = "img/it1/server-after.png" height = 50% width = 50%><br>Click To Enlarge</a></div>
+		  	<li>From the Package Explorer, run errorSim.java file. In the console, type "normal" and press enter. This will chose normal mode of operation, without any errors being introduced</li>
+		  	<div class = "screenie">Before<center><a href="img/it1/errorSim-before.PNG"><img src = "img/it1/errorSim-before.png" height = 50% width = 50%><br>Click To Enlarge</a></div>
+		  	<li>From the Package Explorer, run Client.java file. In the console, just press enter to use the default folder "client-files" in Files folder. You may chose another, but you will have to add files yourself.</li>
+			<div class = "screenie">Before<center><a href="img/it1/client-before.PNG"><img src = "img/it1/client-before.PNG" height = 50% width = 50%><br>Click To Enlarge</a></div>
+			<div class = "screenie">After<center><a href="img/it1/client-after.PNG"><img src = "img/it1/client-after.PNG" height = 50% width = 50%><br>Click To Enlarge</a></div>
+		  	<li>Testing read operation (Server -> Client)</li>
+		  	<ol type = "a">
+				<li>In the console, type "read loremServer.txt".</li>
+				<div class = "screenie"><center><a href="img/it1/read-before.PNG"><img src = "img/it1/read-before.PNG" height = 50% width = 50%><br>Click To Enlarge</a></div>
+				<li>In the console you will notice a progress report of which packets are currently being transfered.</li>
+				<div class = "screenie"><center><a href="img/it1/read-during.PNG"><img src = "img/it1/read-during.PNG" height = 50% width = 50%><br>Click To Enlarge</a></div>
+				<li>Once the transfer is done, you will be able to see the resultant file in Files\client-files folder.</li>
+				<div class = "screenie"><center><a href="img/it1/read-after.PNG"><img src = "img/it1/read-after.PNG" height = 50% width = 50%><br>Click To Enlarge</a></div>
+		  	</ol>
+		  	<li>Testing write operation (Client -> Server)</li>
+		  	<ol type = "a">
+				<li>In the console, type "write loremClient.txt".</li>
+				<div class = "screenie"><center><a href="img/it1/write-before.PNG"><img src = "img/it1/write-before.PNG" height = 50% width = 50%><br>Click To Enlarge</a></div>
+				<li>In the console you will notice a progress report of which packets are currently being transfered.</li>
+				<div class = "screenie"><center><a href="img/it1/write-during.PNG"><img src = "img/it1/write-during.PNG" height = 50% width = 50%><br>Click To Enlarge</a></div>
+				<li>Once the transfer is done, you will be able to see the resultant file in Files\server-files folder.</li>
+				<div class = "screenie"><center><a href="img/it1/write-after.PNG"><img src = "img/it1/write-after.PNG" height = 50% width = 50%><br>Click To Enlarge</a></div>
+		  	</ol>
+		  </ol>
+	 </div>
+	<script>
+		document.getElementById("prevLink").href=solveURLs(contentsArray,currentIndex,true);
+		document.getElementById("nextLink").href=solveURLs(contentsArray,currentIndex,false);
+	</script>
+</body>
+</html>

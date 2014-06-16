@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>[README] Project Import</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script src="js/main.js"></script>
+	<style type="text/css">
+
+    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>    
+  </head>
+  <body>
+	  <script>var currentIndex = 3;</script>
+	  <div class="content">
+		  <div class="title">
+			  <h1>Setting up Eclipse</h1>
+			  <div class="navigation">
+				  <h2 id="navigationHeader">Navigation</h2>
+				  <a id="prevLink">Previous Content</a> | <a href="../README.html">Table of Contents</a> | <a id="nextLink">Next Content</a></div>
+		  </div>
+		  <ol>
+			<li>Open Eclipse; Select File > Import</li>
+			<div class = "screenie"><center><a href="img/import.png"><img src = "img/import.png" height = 50% width = 50%><br>Click To Enlarge</a></div>
+			<li>From the Dialogue box, click "Existing Projects into workspace" and then click Next</li>
+			<div class = "screenie"><center><a href="img/import2.png"><img src = "img/import2.png" height = 50% width = 50%><br>Click To Enlarge</a></div>
+			<li>Using the Browse.. option, select our project folder and click Finish.</li>
+			<div class = "screenie"><center><a href="img/import3.png"><img src = "img/import3.png" height = 50% width = 50%><br>Click To Enlarge</a></div>
+			<li>Your Package Explorer should now look like this. To setup the Test files, run the setupTestFiles.java file. You will see command prompt pop up and close very quickly, this is the hiddenFiles.bat file in the root of our project running. It made two files, muffins.txt (client-files) and chocolate.txt (server-files) hidden. You will also see the Console output saying that two other files, cantEatThis.txt (client-files) and bananaCake.txt (server-files) have been made of format readonly.</li>
+			<div class = "screenie"><center><a href="img/import4.png"><img src = "img/import4.png" height = 50% width = 50%><br>Click To Enlarge</a></div>
+			<div class = "screenie"><center><a href="img/import5.png"><img src = "img/import5.png" height = 50% width = 50%><br>Click To Enlarge</a></div>
+			<blockquote>After running setupTestFiles.java, you will see that some files are now hidden and readonly. Please goto Files\client-files folder and ensure muffins.txt is hidden and cantEatthis.txt is readonly. Some University computers block Batch files from executing. We are using Batch files to make the muffins.txt in client and chocolate.txt in server hidden.</blockquote>
+			
+		  </ol>
+	 </div>
+	<script>
+		document.getElementById("prevLink").href=solveURLs(contentsArray,currentIndex,true);
+		document.getElementById("nextLink").href=solveURLs(contentsArray,currentIndex,false);
+	</script>
+</body>
+</html>

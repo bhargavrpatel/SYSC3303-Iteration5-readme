@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>[README] Testing Iteration 3</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script src="js/main.js"></script>
+	<style type="text/css">
+
+    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>    
+  </head>
+  <body>
+			<script>var currentIndex = 6;</script>
+	  <div class="content">
+		  <div class="title">
+			  <h1>Testing Iteration 3</h1>
+			  <h2>Error Codes 1,2,3, and 6</h2>
+			  <div class="navigation">
+				  <h2 id="navigationHeader">Navigation</h2>
+				  <a id="prevLink">Previous Content</a> | <a href="../README.html">Table of Contents</a> | <a id="nextLink">Next Content</a></div>
+		  </div>
+		  <ol>
+				<blockquote>From this document page onwards, it will be assumed that the project has been imported in eclipse and setupTestFiles.java has been run at least once. If you have not done so, click <a href="eclipseSetup.html">this link</a> to do so.</a></blockquote>
+				<blockquote>It was a MUST that you have followed the Normal Operation procedure because the steps of running the files in a sequence have been omited. This also allows you to have a control to test against. Simply click "Previous Content" link from the above menu</blockquote>
+				<li>Run Server.java file. Press enter to use the default (server-files) folder</li>
+				<li>Run errorSim.java file. Type normal and press enter.</li>
+        		<li>Run Client.java Press enter to use the default (server-files) folder. Please restart the client for clarity (not necessary).</li>	  
+				  <ol class = "testCat">
+					<li class = "testCat">Error Code 1</li>
+					<ol type = "a">	
+						  <li>Type "read " then a name of any file that does not exist on a server ("read asdasdasdsa.txt") you will see the proper error code message.</li>
+							<li>Type "write " then a name of any file that does not exist on a client ("write asdasdasds.txt"). Here, we do not even send a request if the file does not exist on the client.</li>
+							<center><div class = "screenie">Summary of above steps<br/><a href="img/it2/duplicate-errorSim.PNG"><img src="img/it2/duplicate-errorSim.PNG" height=50% width=50%><br/>Click to Enlarge</a></div></center>
+							<blockquote><br /><center>Below is a fragment of the Client console output after trying to write a non-existant file</center></blockquote>
+							<pre class = "code">Select Option: write asdasdasdasd.txt
+Current Thread: 1	Connection on Port: 64456
+File does not exist, ensure the filename is correct
+Failed to send asdasdasdasd.txt: "File does not exist"
+							</pre>
+							<blockquote><br /><center>Below is a fragment of the Client console output after trying to read a non-existant file</center></blockquote>
+							<pre class = "code">Select Option: read asdasdas.txt
+Current Thread: 1	Connection on Port: 64453
+Current Thread: 1	Received error packet. Code: 1, Type: FILE_NOT_FOUND, Message: "Could not find: asdasdas.txt"
+Current Thread: 1	Aborting transfer
+Failed to get asdasdas.txt: "Could not find: asdasdas.txt"
+							</pre>
+					</ol>
+					<li class = "testCat">Error Code 2</li>
+					<ol type = "a">	
+						    <blockquote><br /><center>Before doing this step, ensure you have run setupTestFiles.java</center></blockquote>
+							<li>Type "read bananaCake.txt" to try to read a readonly file.</li>
+							<li>Type "read chocolate.txt" to try to read a hidden file.</li>
+						    <li>Type "write cantEatThis.txt" to try to write a readonly file.</li>
+							<li>Type "write muffins.txt" to try to write a hidden file.</li>
+							<blockquote><br /><center>Below is a fragment of the Client console output after trying to read a hidden file</center></blockquote>
+							<pre class = "code">Select Option: read chocolate.txt
+Current Thread: 1	Connection on Port: 62365
+Current Thread: 1	Received error packet. Code: 2, Type: ACCESS_VIOLATION, Message: "Access violation: File is hidden"
+Current Thread: 1	Aborting transfer
+Failed to get chocolate.txt: "Access violation: File is hidden"
+							</pre>
+							<blockquote><br /><center>Below is a fragment of the Client console output after trying to read a readonly file</center></blockquote>
+							<pre class = "code">Select Option: read bananacake.txt
+Current Thread: 1	Connection on Port: 51482
+Current Thread: 1	Received error packet. Code: 2, Type: ACCESS_VIOLATION, Message: "Access violation: File is read only"
+Current Thread: 1	Aborting transfer
+Failed to get bananacake.txt: "Access violation: File is read only"
+							</pre>
+							<blockquote><br /><center>Below is a fragment of the Client console output after trying to write a hidden file</center></blockquote>
+							<pre class = "code">Select Option: write muffins.txt
+Current Thread: 1	Connection on Port: 51485
+File: muffins.txt is hidden
+Failed to send muffins.txt: "File is hidden"
+							</pre>
+							<blockquote><br /><center>Below is a fragment of the Client console output after trying to write a readonly file</center></blockquote>
+							<pre class = "code">Select Option: write canteatthis.txt
+Current Thread: 1	Connection on Port: 51486
+File: canteatthis.txt is read only
+Failed to send canteatthis.txt: "File is read only"
+							</pre>
+
+					</ol>
+					<li class = "testCat">Error Code 3</li>
+					<ol type = "a">	
+							<blockquote><br /><center>To test this, project must be placed on a USB with a small size.</center></blockquote>
+						  	<li>Type "read " then a name of any file that you have</li>
+							<li>The console will print the following message "There is not enough space on the disk to write your file"</li>
+							<li>The file will not be transferred as the disk is full directory and the program will prompt you to select</li>
+					</ol>
+					<li class = "testCat">Error Code 6</li>
+					<ol type = "a">	
+							<li>In the Client console, type "read loremServer.txt" once. Wait for the file to finish</li>
+							<li>In the Client console, type "read loremServer.txt" again.</li>
+							<blockquote><br /><center>The file will not be transferred and the console will print the following message "Failed to send"</center></blockquote>
+					</ol>
+				</ol>
+		</ol>
+	 </div>
+	<script>
+		document.getElementById("prevLink").href=solveURLs(contentsArray,currentIndex,true);
+		document.getElementById("nextLink").href=solveURLs(contentsArray,currentIndex,false);
+	</script>
+</body>
+</html>

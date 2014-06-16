@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>[README] Testing Iteration 2</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script src="js/main.js"></script>
+	<style type="text/css">
+
+    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>    
+  </head>
+  <body>
+			<script>var currentIndex = 5;</script>
+	  <div class="content">
+		  <div class="title">
+			  <h1>Testing Iteration 2</h1>
+			  <h2>Lost, Delayed and Duplicated Packets</h2>
+			  <div class="navigation">
+				  <h2 id="navigationHeader">Navigation</h2>
+				  <a id="prevLink">Previous Content</a> | <a href="../README.html">Table of Contents</a> | <a id="nextLink">Next Content</a></div>
+		  </div>
+		  <ol>
+				<blockquote>From this document page onwards, it will be assumed that the project has been imported in eclipse and setupTestFiles.java has been run at least once. If you have not done so, click <a href="eclipseSetup.html">this link</a> to do so.</a></blockquote>
+				<blockquote>It was a MUST that you have followed the Normal Operation procedure because the steps of running the files in a sequence have been omited. This also allows you to have a control to test against. Simply click "Previous Content" link from the above menu</blockquote>
+				<li>Run Server.java file. Press enter to use the default (server-files) folder</li>
+				<li>Run errorSim.java file. For Iteration 2, you can pick the highlighted options.</li>
+				<center><div class = "screenie">Available options to test for Iteration 2<br/><a href="img/it2/errorSim.PNG"><img src="img/it2/errorSim.PNG" height=50% width=50%><br/>Click to Enlarge</a></div></center>
+				<li>You can test any of the following cases using their respective steps. It is important to restart errorSim.java each time for clarity and to reset the settings, and also recommended you delete the files from the target folder.</li>
+				<ol class = "testCat">
+					<li class = "testCat">Duplicate Packets</li>
+					<ol type="a">
+								<li>in the errorSim.java console, type "10" and press enter</li>
+								<li>You will be asked to specify whether you wish to duplicate ACK or DATA packet. Select either by typing 'ack' or 'data' and press enter.</li>
+								<li>You will now be asked to specify the block you wish to duplicate, type an integer in and press enter.</li>
+								<center><div class = "screenie">Summary of above steps<br/><a href="img/it2/duplicate-errorSim.PNG"><img src="img/it2/duplicate-errorSim.PNG" height=50% width=50%><br/>Click to Enlarge</a></div></center>
+								<blockquote><br /><center>Below is a fragment of the Client console output after you complete the entire test (after doing Step 4 and onwards)</center></blockquote>
+								<pre class = "code">Select Option: read loremserver.txt
+Current Thread: 1	Connection on Port: 64214
+Current Thread: 1	Setting REMOTE TID to: 64215
+Current Thread: 1	Received DATA BLK # : 1
+Current Thread: 1	Sent ACK BLK # : 1
+Current Thread: 1	Received DATA BLK # : 2
+Current Thread: 1	Sent ACK BLK # : 2
+Current Thread: 1	Sent ACK BLK # : 2 as a response to duplicate DATA
+Current Thread: 1	Waiting to receive DATA #3 timed out, trying again.
+Current Thread: 1	Waiting to receive DATA #3 timed out, trying again.
+Current Thread: 1	Received DATA BLK # : 3
+Current Thread: 1	Sent ACK BLK # : 3
+Current Thread: 1	Received DATA BLK # : 4
+Current Thread: 1	Sent ACK BLK # : 4
+Current Thread: 1	Received DATA BLK # : 5
+Current Thread: 1	Sent ACK BLK # : 5
+Current Thread: 1	Received DATA BLK # : 6
+....
+										</pre>
+							<li>Skip to Step #4 and run the Client.java file</li>
+					</ol>
+					<li class = "testCat">Testing Delayed Packets</li>
+					<ol type="a">
+								<li>in the Error Simulator console, type '9' and press enter to select Delaying packets</li>
+								<li>You will be asked to specify whether you wish to duplicate ACK or DATA packet. Select either by typing 'ack' or 'data' and press enter.</li>
+								<li>You will now be asked to specify the block you wish to duplicate, type an integer in and press enter. Note: I have ommited an image here to reduce submission size, simply refer to the example image above. Everything is identical except in this case, you entered '9'.</li>
+								<li>Skip to Step #4 and run the Client.java file</li>
+					</ol>
+					<li class = "testCat">Testing Lost Packets</li>
+					<ol type="a">
+								<li>in the Error Simulator console, type '8' and press enter to select Lose packets</li>
+								<li>You will be asked to specify whether you wish to duplicate ACK, DATA, or REQUEST packet. Select either by typing 'ack' or 'data' or 'request' and press enter.</li>
+								<li>IF you selected Data or ACK, You will now be asked to specify the block you wish to duplicate, type an integer in and press enter. Note: I have ommited an image here to reduce submission size, simply refer to the example image above. Everything is identical except in this case, you entered '9'.</li>
+								<center><div class = "screenie">Summary of above steps<br/><a href="img/it2/lostpackete-errorsim.PNG"><img src="img/it2/lostpackete-errorsim.PNG" height=50% width=50%><br/>Click to Enlarge</a></div></center>
+								<blockquote><br /><center>Below is a fragment of the Client console, when a request packet was lost</center></blockquote>
+								<pre class = "code">Select Option: read loremserver.txt
+Current Thread: 1	Connection on Port: 53538
+Current Thread: 1	Waiting to receive DATA #1 timed out, trying again.
+Current Thread: 1	Resending final transfer packet.
+Current Thread: 1	Setting REMOTE TID to: 53539
+Current Thread: 1	Received DATA BLK # : 1
+Current Thread: 1	Sent ACK BLK # : 1
+Current Thread: 1	Received DATA BLK # : 2
+Current Thread: 1	Sent ACK BLK # : 2
+....
+										</pre>
+								<li>Skip to Step #4 and run the Client.java file</li>
+					</ol>
+				</ol>
+        <li>Run Client.java file as per normal</li>	  
+		  <li>Enter either "read loremServer.txt" or "write loremClient.txt" <STRONG>ENSURE File you chose does not exist on target side.</STRONG> Below we have shown what happened in the case of Example 1. We have chosen 'read loremserver.txt' in the scenario shown below</li>
+		  </ol>
+	 </div>
+	<script>
+		document.getElementById("prevLink").href=solveURLs(contentsArray,currentIndex,true);
+		document.getElementById("nextLink").href=solveURLs(contentsArray,currentIndex,false);
+	</script>
+</body>
+</html>

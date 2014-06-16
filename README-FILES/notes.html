@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>[README] General notes</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script src="js/main.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>    
+  </head>
+  <body>
+	  <script>var currentIndex = 1;</script>
+	  <div class="content">
+		  <div class="title">
+			  <h1>General Notes</h1>
+			  <div class="navigation">
+				  <h2 id="navigationHeader">Navigation</h2>
+				  <a id="prevLink">Previous Content</a> | <a href="../README.html">Table of Contents</a> | <a id="nextLink">Next Content</a></div>
+		  </div>
+		  <ol>
+			  <li>We have went through a lot of trouble to make this README documents. They are not in text format, but HTML. This allows us to make our documentation beautiful and makes it convinient for you to read. We have done so with permission of TA, Mr. Vilas Joshi. I hope you understand that I only had your convinience in mind makign this. It took me more than 4 hours to get to where I am with this.</li>
+			  <li>If possible, view these documents on Firefox as we have added custom font smoothing for it. Everything will look cleaner.</li>
+			  <li>First step after importing the java project in Eclipse should ALWAYS be to run the setupTestFiles.java file. This file will make the file chocolate.txt in server-files and muffins.txt in client-files hidden as well as make bananaCake.txt in server-files and cantEatThis.txt in server-files read only.</li>
+			  <li>
+				  When running any java file, do so by right clicking on the class in Package Explorer and clicking on Run As > Java Application instead of clicking the play button. The play button is not context aware and sometimes launches unintended classes.
+				  <img src="img/runas.png">
+			  </li>
+			  <li>Before testing the error cases, please ensure the permissions of each file (hidden/readonly) is working. As some school computers might block batch files. If unclear, visit <a href="http://imgur.com/gswBp5Q">This Link</a> to see how.</a></li>
+	  		  <li>During testing/Interacting with Console, it is recommended that you maximize the console windows and minimize the code view. This will allow you to see the full menues and all the logs properly.</li>
+	  		  <ol type="a">
+				  <li>To make sure we are on the same page, go to Window > Reset Prespective</li>
+				  <li>Click the following buttons...</li>
+				  <div class = "screenie"><center><a href="img/minimize-before.png"><img src = "img/minimize-before.png" height = 50% width = 50%><br>Click To Enlarge</a></div>
+				  <li>After doing so running a java file will put it right in the center</li>
+				  <div class = "screenie">After<center><a href="img/minimize-after.png"><img src = "img/minimize-after.png" height = 50% width = 50%><br>Click To Enlarge</a></div>
+	  		  </ol>
+		  </ol>
+	 </div>
+	<script>
+		document.getElementById("prevLink").href=solveURLs(contentsArray,currentIndex,true);
+		document.getElementById("nextLink").href=solveURLs(contentsArray,currentIndex,false);
+	</script>
+</body>
+</html>

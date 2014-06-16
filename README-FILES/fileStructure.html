@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>[README] File Structure</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script src="js/main.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>    
+  </head>
+  <body>
+	  <script>var currentIndex = 2;</script>
+	  <div class="content">
+		<div class="title">
+			<h1>Folder Structure</h1>
+			<div class="navigation">
+				<h2 id="navigationHeader">Navigation</h2>
+				<a id="prevLink">Previous Content</a> | <a href="../README.html">Table of Contents</a> | <a id="nextLink">Next Content</a></div>
+		</div>
+		<div class = "block">Below is a visualization of all the files and folders, and their brief descriptions in this submission</div>
+        <ol>
+			<li>.classpath <em class = "listComment">Created by Eclipse</em></li>
+			<li>.project <em class = "listComment">Created by Eclipse</em></li>
+			<li>README.html <em class = "listComment">The main Index of README htmls</em></li>
+			<li>hideFiles.bat <em class = "listComment">A bat file used by setupTestFiles.java to make certain test files hidden. Do not run this yourself.</em></li>
+			<li>Diagram</li>
+			<ul>
+				<li>Class Diagrams <p class = "listComment">Contains the class diagrams</em></li>
+				<li>UCM Diagrams <em class = "listComment">Contains the use case map diagrams</em></li>
+				<li>Timing Diagrams <em class = "listComment">Contains the sequence/timing diagrams per each case</em></li>
+			</ul>
+			<li>Files</li>
+			<ul>
+				<li>client-files <em class = "listComment">Contains the test files associated with the Client. Files sent from server will also be here.</em></li>
+				<ul>
+					<li>loremClient.txt <em class = "listComment">A normal file</em></li>
+					<li>muffins.txt <em class = "listComment">After running setupTestFiles.jar, this will be hidden</em></li>
+					<li>cantEatThis.txt<em class = "listComment">After running setupTestFiles.jar, this will be readonly</em></li>
+					<li>512.txt<em class = "listComment">A file that is exactly 512 bytes</em></li>
+					<li>largerthan132kb.txt<em class = "listComment">A file that is 150 kb</em></li>
+				</ul>
+				<li>server-files <em class = "listComment">Contains the test files associated with the Server. Files sent from client will also be here.</em></li>
+				<ul>
+					<li>loremServer.txt <em class = "listComment">A normal file</em></li>
+					<li>chocolate.txt <em class = "listComment">After running setupTestFiles.jar, this will be hidden</em></li>
+					<li>bananaCake.txt<em class = "listComment">After running setupTestFiles.jar, this will be readonly</em></li>
+					<li>1536.txt<em class = "listComment">A file that is exactly 512*3 bytes (A multiple of 512)</em></li>				
+				</ul>
+			</ul>
+		  	<li>src</li>
+			<ul>
+				<li>Client.jar <em class = "listComment">Main Client class</em></li>
+				<li>errorSim.jar <em class = "listComment">Main Error Simulator class</em></li>
+				<li>Server.jar <em class = "listComment">Main Server class</em></li>
+				<li>reqListener.jar <em class = "listComment">The listener class, used when listening to requests</em></li>
+				<li>serverTransfer.jar <em class = "listComment">A class extending Thread, used in transfer by server</em></li>
+				<li>common <em class = "listComment">Folder containing class used by more than one classes</em></li>
+				<ul>
+					<li>setupTestFiles.java <em class = "listComment">Run this class BEFORE ANY! it makes test files hidden/readonly</em></li>
+					<li>abortException.java <em class = "listComment">A custom exception class that we throw</em></li>
+					<li>ConnectionManager.java <em class = "listComment">A major class we use to manage connections, requests, and sending/recieveing</em></li>
+					<li>packets <em class = "listComment">A folder for the Packet class and its subclasses for different types of packets.</em></li>
+					<ul>
+						<li>Packets.java <em class = "listComment">An abstract class used by all the other packet type classes</em></li>
+						<li>ACKPackets.java</li>
+						<li>DataPackets.java</li>
+						<li>RequestsPackets.java</li>
+						<li>DataPackets.java</li>
+					</ul>
+				</ul>
+			</ul>
+        </ol>
+	 </div>
+	<script>
+		document.getElementById("prevLink").href=solveURLs(contentsArray,currentIndex,true);
+		document.getElementById("nextLink").href=solveURLs(contentsArray,currentIndex,false);
+	</script>
+</body>
+</html>
